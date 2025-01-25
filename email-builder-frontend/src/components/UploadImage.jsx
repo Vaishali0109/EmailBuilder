@@ -8,7 +8,7 @@ const UploadImage = () => {
     const formData = new FormData();
     formData.append('image', file);
 
-    axios.post('http://localhost:5000/api/uploadImage', formData)
+    axios.post('https://emailbuilder-ncqu.onrender.com/api/uploadImage', formData)
       .then(res => alert(`Image uploaded: ${res.data.imageUrl}`))
       .catch(err => console.log(err));
   };

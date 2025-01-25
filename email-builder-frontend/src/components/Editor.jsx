@@ -6,7 +6,7 @@ const Editor = () => {
   const [formData, setFormData] = useState({ title: '', content: '', footer: '' });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/getEmailLayout')
+    axios.get('https://emailbuilder-ncqu.onrender.com/api/getEmailLayout')
       .then(res => setLayout(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -16,7 +16,7 @@ const Editor = () => {
   };
 
   const handleSubmit = () => {
-    axios.post('http://localhost:5000/api/uploadEmailConfig', formData)
+    axios.post('https://emailbuilder-ncqu.onrender.com/api/uploadEmailConfig', formData)
       .then(() => alert('Template saved successfully'))
       .catch(err => console.log(err));
   };
